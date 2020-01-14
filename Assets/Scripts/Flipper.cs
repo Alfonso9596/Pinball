@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flipper : OOB_Objects
 {
     [SerializeField]
-    private float bounciness = 0;
+    private float bounciness = 1;
 
     public float Bounciness
     {
