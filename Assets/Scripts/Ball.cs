@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : OOB_Objects
+public class Ball : MonoBehaviour
 {
     private Vector3 movement;
     private Vector3 gravity;
@@ -11,6 +11,14 @@ public class Ball : OOB_Objects
     [SerializeField]
     [Range(0f,3f)]
     private float bounciness = 1f;
+
+    public Vector3 Center
+    {
+        get
+        {
+            return transform.position;
+        }
+    }
 
     public Vector3 Movement
     {
@@ -109,8 +117,10 @@ public class Ball : OOB_Objects
 
     public void BounceOff(Vector3 normal, float bounciness)
     {
-        movement = Quaternion.AngleAxis(180f, normal) * movement;
+        float bounceAngle = Vector3.Angle(movement, normal);
+        movement = Quaternion.AngleAxis(bounceAngle, normal) * movement;
         movement *= -bounciness;
+        movement = new Vector3(movement.x, 0, movement.z);
     }
 
 }

@@ -19,33 +19,39 @@ public class CollisionManager : MonoBehaviour
     void FixedUpdate()
     {
         ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
+
+        BallToFloorCollision();
+
         foreach (GameObject wallObject in walls)
         {
             Wall wall = wallObject.GetComponent<Wall>();
 
-            //Vector3 normal = (ball.transform.position - wall.transform.position);
-            Vector3 normal = new Vector3(ball.transform.position.x - wall.transform.position.x, 0, ball.transform.position.z - wall.transform.position.z);
-
             bool isBallCollidingWithWall = BallToWallCollision(wall);
             if (isBallCollidingWithWall)
             {
-                Debug.Log(wall.name);
-                ball.BounceOff(normal, ball.Bounciness * wall.Bounciness);
+                Vector3 normal = wall.GetNormal();
+                if (Vector3.Dot(normal, ball.Movement) < 0)
+                {
+                    Debug.Log(Vector3.Dot(normal, ball.Movement));
+                    Debug.Log(wall.name);
+                    ball.BounceOff(normal, ball.Bounciness * wall.Bounciness);
+                }
             }
         }
 
-        BallToFloorCollision();
         foreach (GameObject flipperObject in flippers)
         {
             Flipper flipper = flipperObject.GetComponent<Flipper>();
 
-            Vector3 normal = new Vector3(ball.transform.position.x - flipper.transform.position.x, 0, ball.transform.position.z - flipper.transform.position.z);
-
             bool ballToFlipperCollision = BallToFlipperCollision(flipper);
             if (ballToFlipperCollision)
             {
-                Debug.Log(flipper.name);
-                ball.BounceOff(normal, ball.Bounciness * flipper.Bounciness);
+                Vector3 normal = flipper.GetNormal();
+                if (Vector3.Dot(normal, ball.Movement) < 0)
+                {
+                    Debug.Log(flipper.name);
+                    ball.BounceOff(normal, ball.Bounciness * flipper.Bounciness);
+                }
             }
         }
     }
@@ -69,75 +75,17 @@ public class CollisionManager : MonoBehaviour
 
     private bool BallToFlipperCollision(Flipper flipper)
     {
-        MeshRenderer flipperMesh = flipper.GetComponent<MeshRenderer>();
+        Vector3 closestPoint = flipper.OrientedBounds.ClosestPoint(ball.Center);
+        float distance = (ball.Center - closestPoint).magnitude;
 
-        float wallWidth = flipperMesh.bounds.size.x;
-        float wallHeight = flipperMesh.bounds.size.y;
-        float wallDepth = flipperMesh.bounds.size.z;
-
-        float ballXDistance = Mathf.Abs(ball.transform.position.x - flipper.transform.position.x);
-        float ballYDistance = Mathf.Abs(ball.transform.position.y - flipper.transform.position.y);
-        float ballZDistance = Mathf.Abs(ball.transform.position.z - flipper.transform.position.z);
-
-        float ballRadius = ball.transform.localScale.x / 2;
-
-        if
-            (ballXDistance >= (wallWidth - ballRadius) ||
-             ballYDistance >= (wallHeight - ballRadius) ||
-             ballZDistance >= (wallDepth - ballRadius))
-        {
-            return false;
-        }
-        else if
-            (ballXDistance < wallWidth ||
-             ballYDistance < wallHeight ||
-             ballZDistance < wallDepth)
-        {
-            return true;
-        }
-
-        float cornerDistance =
-            Mathf.Pow(ballXDistance - wallWidth, 2) *
-            Mathf.Pow(ballYDistance - wallHeight, 2) *
-            Mathf.Pow(ballZDistance - wallDepth, 2);
-
-        return (cornerDistance < Mathf.Pow(ballRadius, 2));
+        return distance <= ball.Radius + 0.2f;
     }
 
     private bool BallToWallCollision(Wall wall)
     {
-        MeshRenderer wallMesh = wall.GetComponent<MeshRenderer>();
+        Vector3 closestPoint = wall.OrientedBounds.ClosestPoint(ball.Center);
+        float distance = (ball.Center - closestPoint).magnitude;
 
-        float wallWidth = wallMesh.bounds.size.x / 2;
-        float wallHeight = wallMesh.bounds.size.y / 2;
-        float wallDepth = wallMesh.bounds.size.z / 2;
-
-        float ballXDistance = Mathf.Abs(ball.transform.position.x - wall.transform.position.x);
-        float ballYDistance = Mathf.Abs(ball.transform.position.y - wall.transform.position.y);
-        float ballZDistance = Mathf.Abs(ball.transform.position.z - wall.transform.position.z);
-
-        float ballRadius = ball.transform.localScale.x / 2;
-
-        if 
-            (ballXDistance >= (wallWidth + ballRadius) ||
-             ballYDistance >= (wallHeight + ballRadius) ||
-             ballZDistance >= (wallDepth + ballRadius))
-        {
-            return false;
-        }
-        else if
-            (ballXDistance < wallWidth + ballRadius ||
-             ballYDistance < wallHeight + ballRadius ||
-             ballZDistance < wallDepth + ballRadius)
-        {
-            return true;
-        }
-
-        float cornerDistance = 
-            Mathf.Pow(ballXDistance - wallWidth + ballRadius, 2) * 
-            Mathf.Pow(ballYDistance - wallHeight + ballRadius, 2) * 
-            Mathf.Pow(ballZDistance - wallDepth + ballRadius, 2);
-
-        return (cornerDistance < Mathf.Pow(ballRadius, 2));
+        return distance <= ball.Radius + 0.2f;
     }
 }

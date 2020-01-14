@@ -149,6 +149,7 @@ public struct OOB_Bounds {
         return q;
     }
 
+
     public bool Contains(Vector3 point)
     {
         Vector3 p = transform.InverseTransformPoint(point);
@@ -220,4 +221,6 @@ public struct OOB_Bounds {
         float sumSpan = aMax - aMin + bMax - bMin;
         return longSpan < sumSpan;
     }
+
+
 }

@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 94368415}
   - component: {fileID: 94368414}
   - component: {fileID: 94368413}
+  - component: {fileID: 94368417}
   m_Layer: 0
   m_Name: CornerTopLeft
   m_TagString: Wall
@@ -151,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &94368414
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -212,6 +212,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &94368417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94368412}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &166252040
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe00386d9ded98749bb7ee847f1c7891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 0
 --- !u!23 &296122306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -341,13 +364,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296122304}
-  m_LocalRotation: {x: 0, y: 0.17364816, z: 0, w: 0.9848078}
+  m_LocalRotation: {x: 0, y: 0.06427108, z: 0, w: 0.9979325}
   m_LocalPosition: {x: -1.7, y: 0, z: -6}
   m_LocalScale: {x: 2.5, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 7.37, z: 0}
 --- !u!114 &296122309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +378,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296122304}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
   m_Name: 
@@ -384,6 +407,7 @@ GameObject:
   - component: {fileID: 465972555}
   - component: {fileID: 465972554}
   - component: {fileID: 465972553}
+  - component: {fileID: 465972557}
   m_Layer: 0
   m_Name: WallLeft
   m_TagString: Wall
@@ -403,7 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &465972554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -464,6 +487,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465972557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465972552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &587610725
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +614,7 @@ GameObject:
   - component: {fileID: 695006340}
   - component: {fileID: 695006339}
   - component: {fileID: 695006338}
+  - component: {fileID: 695006341}
   - component: {fileID: 695006337}
   m_Layer: 0
   m_Name: WallRight
@@ -587,7 +635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &695006338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -648,6 +695,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695006341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695006336}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +905,7 @@ GameObject:
   - component: {fileID: 996492740}
   - component: {fileID: 996492739}
   - component: {fileID: 996492738}
+  - component: {fileID: 996492742}
   m_Layer: 0
   m_Name: WallBottomRight
   m_TagString: Wall
@@ -853,7 +925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &996492739
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -914,6 +985,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996492742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996492737}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &1070358850
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +1021,7 @@ GameObject:
   - component: {fileID: 1070358853}
   - component: {fileID: 1070358852}
   - component: {fileID: 1070358851}
+  - component: {fileID: 1070358855}
   m_Layer: 0
   m_Name: WallTop
   m_TagString: Wall
@@ -945,7 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &1070358852
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1006,6 +1101,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1070358855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070358850}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &1253767603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5254375216598185170, guid: 914095414378b6642b1c7a7099b4c3e4,
@@ -1054,6 +1173,7 @@ GameObject:
   - component: {fileID: 1506539904}
   - component: {fileID: 1506539903}
   - component: {fileID: 1506539902}
+  - component: {fileID: 1506539906}
   m_Layer: 0
   m_Name: CornerTopRight
   m_TagString: Wall
@@ -1073,7 +1193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &1506539903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1134,6 +1253,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &1506539906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506539901}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &1518952828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1289,7 @@ GameObject:
   - component: {fileID: 1518952831}
   - component: {fileID: 1518952830}
   - component: {fileID: 1518952829}
+  - component: {fileID: 1518952833}
   m_Layer: 0
   m_Name: CornerBottomRight
   m_TagString: Flipper
@@ -1165,7 +1309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe00386d9ded98749bb7ee847f1c7891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 0
 --- !u!23 &1518952830
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1226,6 +1369,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -20, z: 0}
+--- !u!114 &1518952833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518952828}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1 &1957654661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1405,7 @@ GameObject:
   - component: {fileID: 1957654664}
   - component: {fileID: 1957654663}
   - component: {fileID: 1957654662}
+  - component: {fileID: 1957654666}
   m_Layer: 0
   m_Name: WallBottomLeft
   m_TagString: Wall
@@ -1257,7 +1425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e3dd3d5730ea4ea258b48a5532536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 1
 --- !u!23 &1957654663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1318,6 +1485,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957654666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957654661}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990381120d957a04d9a9272a7f027430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  color: {r: 1, g: 0, b: 0, a: 1}
+  showClosestPoint: 1
+  colorClosestPoint: {r: 0, g: 1, b: 0, a: 1}
+  pointSize: 0.5
+  pointToCheck: {x: 0, y: 0, z: 0}
+  objectToCheck: {fileID: 1253767607}
+  showIntersection: 1
+  colorIntersecting: {r: 0, g: 1, b: 0, a: 1}
+  colorNotIntersecting: {r: 1, g: 0, b: 0, a: 1}
+  intersectionText: {fileID: 0}
+  objectToCheckIntersectionAgainst: {fileID: 0}
 --- !u!1001 &5254375217747542099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1384,6 +1575,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254375216598185174, guid: 914095414378b6642b1c7a7099b4c3e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254375216598185174, guid: 914095414378b6642b1c7a7099b4c3e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254375216598185174, guid: 914095414378b6642b1c7a7099b4c3e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6789629855366915313, guid: 914095414378b6642b1c7a7099b4c3e4,
         type: 3}
