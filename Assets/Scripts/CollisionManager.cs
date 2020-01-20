@@ -25,15 +25,14 @@ public class CollisionManager : MonoBehaviour
         foreach (GameObject wallObject in walls)
         {
             Wall wall = wallObject.GetComponent<Wall>();
-
+            Debug.Log(wall.name);
             bool isBallCollidingWithWall = BallToWallCollision(wall);
             if (isBallCollidingWithWall)
             {
                 Vector3 normal = wall.GetNormal();
                 if (Vector3.Dot(normal, ball.Movement) < 0)
                 {
-                    Debug.Log(Vector3.Dot(normal, ball.Movement));
-                    Debug.Log(wall.name);
+                    //Debug.Log(wall.name);
                     ball.BounceOff(normal, ball.Bounciness * wall.Bounciness);
                 }
             }
@@ -42,6 +41,7 @@ public class CollisionManager : MonoBehaviour
         foreach (GameObject flipperObject in flippers)
         {
             Flipper flipper = flipperObject.GetComponent<Flipper>();
+            Debug.Log(flipper.name);
 
             bool ballToFlipperCollision = BallToFlipperCollision(flipper);
             if (ballToFlipperCollision)
@@ -49,7 +49,7 @@ public class CollisionManager : MonoBehaviour
                 Vector3 normal = flipper.GetNormal();
                 if (Vector3.Dot(normal, ball.Movement) < 0)
                 {
-                    Debug.Log(flipper.name);
+                    //Debug.Log(flipper.name);
                     ball.BounceOff(normal, ball.Bounciness * flipper.Bounciness);
                 }
             }

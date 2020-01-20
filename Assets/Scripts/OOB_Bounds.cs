@@ -219,7 +219,7 @@ public struct OOB_Bounds {
 
         float longSpan = Mathf.Max(aMax, bMax) - Mathf.Min(aMin, bMin);
         float sumSpan = aMax - aMin + bMax - bMin;
-        return longSpan < sumSpan;
+        return longSpan <= sumSpan;
     }
 
 
